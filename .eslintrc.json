@@ -21,6 +21,7 @@
     "no-undef": 2,
     "import/no-extraneous-dependencies": 0,
     "comma-dangle": 0,
-    "global-require": 0
+    "global-require": 0,
+    "import/no-unresolved": 0
   }
 }

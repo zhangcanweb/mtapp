@@ -8,6 +8,9 @@ module.exports = {
   entry: {
     main: path.resolve(__dirname, '../src/main.js')
   },
+  resolve: {
+    extensions: ['.vue', '.js', '.json ']
+  },
   module: {
     rules: [
       {
