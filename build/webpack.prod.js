@@ -30,7 +30,10 @@ module.exports = merge(common, {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: [require('autoprefixer')]
+              plugins: [
+                require('autoprefixer'),
+                require('postcss-sprites')({ spritePath: './src/assets/img/' })
+              ]
             }
           }
         ]

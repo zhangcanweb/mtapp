@@ -26,12 +26,34 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader'
       }, {
-        test: /\.html$/,
-        use: ['html-loader']
-      }, {
         test: /\.vue$/,
         loader: 'vue-loader'
-      }
+      }, {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1 * 1024
+            }
+          }
+        ]
+      }, {
+        test: /\.svg$/,
+        loader: 'svg-url-loader',
+        options: {
+          // 小于 10kB(10240字节）的内联文件
+          limit: 10 * 1024,
+          // 移除 url 中的引号
+          // (在大多数情况下它们都不是必要的)
+          noquotes: true
+        }
+      }, // {
+      //   test: /\.(jpe?g|png|gif|svg)$/,
+      //   loader: 'image-webpack-loader',
+      //   // 这会应用该 loader，在其它之前
+      //   enforce: 'pre'
+      // }
     ]
   },
   plugins: [
